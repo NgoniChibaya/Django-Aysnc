@@ -33,7 +33,7 @@ ALLOWED_HOSTS = []
 
 # CELERY Configuration
 
-os.environ.setdefault('FORKED_BY_MULTIPROCESSING', '1')
+os.environ.setdefault('FORKED_BY_MULTIPROCESSING', '3')
 CELERY_BROKER_URL = "redis://localhost:6379"
 CELERY_RESULT_BACKEND = "redis://localhost:6379"
 
