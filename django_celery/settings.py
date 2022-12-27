@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -29,6 +30,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+
+# CELERY Configuration
+
+os.environ.setdefault('FORKED_BY_MULTIPROCESSING', '1')
+CELERY_BROKER_URL = "redis://localhost:6379"
+CELERY_RESULT_BACKEND = "redis://localhost:6379"
 
 # Application definition
 
